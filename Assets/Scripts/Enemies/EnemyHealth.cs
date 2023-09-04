@@ -21,7 +21,11 @@ public class EnemyHealth : MonoBehaviour
     {
         flash=GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
-        enemyHealthContainer = GameObject.Find("UI_Canvas").transform.Find(ENEMY_HEALTH_CONTAINER_TEXT).gameObject;
+        if(enemyHealthContainer != null)
+        {
+            enemyHealthContainer = GameObject.Find("UI_Canvas").transform.Find(ENEMY_HEALTH_CONTAINER_TEXT).gameObject;
+        }
+        
     }
     private void Start()
     {

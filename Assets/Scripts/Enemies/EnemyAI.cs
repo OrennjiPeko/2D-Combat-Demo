@@ -59,6 +59,7 @@ public class EnemyAI : MonoBehaviour
 
         enemyPathFinder.MoveTo(roamPosition);
 
+        
         if (Vector2.Distance(transform.position, PlayerController.Instance.transform.position) < attackRange)
         {
             state = State.Attacking;

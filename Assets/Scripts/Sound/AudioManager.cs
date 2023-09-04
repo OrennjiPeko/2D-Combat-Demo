@@ -40,10 +40,9 @@ public class AudioManager : Singletoon<AudioManager>
     {
         Debug.Log("Testing");
         currentScene = SceneManager.GetActiveScene().name;
-        if(IsPlaying ==false && currentScene=="Town")
+        if(IsPlaying ==false)
         {
-            Play("Town");
-            IsPlaying = true;
+            StartZoneMusic();
         }
 
         
@@ -142,6 +141,25 @@ public class AudioManager : Singletoon<AudioManager>
             
         }
         
+    }
+
+     private void StartZoneMusic()
+    {
+        if (currentScene == "Town")
+        {
+            Play("Town");
+            IsPlaying=true;
+        }
+        if (currentScene == "Scene_4"||currentScene=="Scene_3"||currentScene=="Scene_2"||currentScene=="Scene_1")
+        {
+            Play("WoodsMusic");
+            IsPlaying = true;
+        }
+        if (currentScene=="Ghost_Boss")
+        {
+            Play("BossTheme");
+            IsPlaying = true;
+        }
     }
 
 }
